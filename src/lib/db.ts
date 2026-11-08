@@ -77,7 +77,7 @@ function pdb() {
       payment_intent text,
       status text not null default 'paid',
       created_at timestamptz not null default now()
-    )`)).then(() => {});
+    )`)).then(() => {}).catch((e) => { purchasesReady = null; throw e; }); // don't cache a failed connection
   return p;
 }
 const PFILE = path.join(process.cwd(), ".data", "purchases.json");

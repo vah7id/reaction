@@ -14,10 +14,11 @@ export async function GET(req: Request) {
   try {
     const user = await currentUser();
     if (authEnabled() && !user) return NextResponse.redirect(`${origin}/login?next=/api/checkout`, 303);
-    if (user && (await ownsLibrary(user.id, user.email))) return NextResponse.redirect(`${origin}/account`, 303);
+    const owns = user ? await ownsLibrary(user.id, user.email).catch((e) => { console.error("[checkout] purchase lookup failed:", e instanceof Error ? e.message : e); return false; }) : false;
+    if (owns) return NextResponse.redirect(`${origin}/account`, 303);
     return NextResponse.redirect(await createCheckoutUrl(origin, user), 303);
   } catch (e) {
-    console.error(e);
+    console.error("[checkout] could not start Stripe checkout:", e instanceof Error ? e.message : e);
     return NextResponse.redirect(`${origin}/#pricing`, 303);
   }
 }

@@ -15,13 +15,25 @@ export default async function Account({ searchParams }: { searchParams: Promise<
   if (!authEnabled()) redirect("/login");
   const user = await currentUser();
   if (!user) redirect("/login?next=/account");
-  const owns = await ownsLibrary(user.id, user.email);
+  let owns = false, lookupFailed = false;
+  try {
+    owns = await ownsLibrary(user.id, user.email);
+  } catch (e) {
+    // Usually DATABASE_URL is missing/wrong on the server. Log it instead of crashing the page.
+    console.error("[account] purchase lookup failed:", e instanceof Error ? e.message : e);
+    lookupFailed = true;
+  }
   const mail = <a href={`mailto:${config.supportEmail}`} style={{ textDecoration: "underline" }}>{config.supportEmail}</a>;
 
   return (
     <main className="dl">
       <span className="mono muted">{user.email}</span>
-      {owns ? (
+      {lookupFailed ? (
+        <>
+          <h1>We couldn&apos;t load <em>your library.</em></h1>
+          <p className="muted">Something went wrong while checking your purchase. Please reload in a minute. If you&apos;ve paid and it still doesn&apos;t show, email {mail} and we&apos;ll send your download.</p>
+        </>
+      ) : owns ? (
         <>
           <h1>{sp.welcome ? <>The library <em>is yours.</em></> : <>Your <em>library.</em></>}</h1>
           <p className="muted">All {library.totalClips} AI UGC reaction clips from {library.totalCharacters} characters, as original vertical MP4s, sorted into folders by character with the emotion in each file name.</p>
