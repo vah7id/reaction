@@ -48,3 +48,15 @@ export async function savePaidSession(s: Stripe.Checkout.Session): Promise<strin
   });
   return email;
 }
+
+/** Fallback when the database is unavailable: is there a paid, unrefunded Checkout session for this buyer in Stripe? */
+export async function paidInStripe(_userId: string, email: string): Promise<boolean> {
+  if (!stripeEnabled()) return false;
+  const sessions = await stripe().checkout.sessions.list({ customer_details: { email: email.toLowerCase() }, status: "complete", limit: 20, expand: ["data.payment_intent.latest_charge"] });
+  return sessions.data.some((s) => {
+    if (s.payment_status !== "paid") return false;
+    const pi = s.payment_intent;
+    const charge = pi && typeof pi !== "string" ? pi.latest_charge : null;
+    return !(charge && typeof charge !== "string" && charge.refunded);
+  });
+}

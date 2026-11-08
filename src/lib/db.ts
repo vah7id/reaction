@@ -107,9 +107,17 @@ export async function recordPurchase(x: { sessionId: string; userId: string | nu
 export async function ownsLibrary(userId: string, email: string): Promise<boolean> {
   const p = pdb();
   if (p) {
-    await purchasesReady;
-    const r = await p.query(`select 1 from purchases where status = 'paid' and (user_id = $1 or email = $2) limit 1`, [userId, email.toLowerCase()]);
-    return r.rowCount! > 0;
+    try {
+      await purchasesReady;
+      const r = await p.query(`select 1 from purchases where status = 'paid' and (user_id = $1 or email = $2) limit 1`, [userId, email.toLowerCase()]);
+      if (r.rowCount! > 0) return true;
+      return false;
+    } catch (e) {
+      // Database down or misconfigured: Stripe is the source of truth for payments, so ask it instead.
+      console.error("[db] purchase lookup failed, checking Stripe instead:", e instanceof Error ? e.message : e);
+      const { paidInStripe } = await import("./stripe");
+      return paidInStripe(userId, email);
+    }
   }
   return (await readP()).some((r) => r.status === "paid" && (r.user_id === userId || r.email === email.toLowerCase()));
 }
