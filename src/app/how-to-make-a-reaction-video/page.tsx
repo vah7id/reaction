@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/how-to-make-a-reaction-video" },
 };
 
-const ld = { "@context": "https://schema.org", "@type": "Article", headline: "How to make a reaction video (without filming one)", author: { "@type": "Organization", name: "UGCLibrary" }, publisher: { "@type": "Organization", name: "UGCLibrary" }, datePublished: "2026-11-07" };
+const ld = { "@context": "https://schema.org", "@type": "Article", headline: "How to make a reaction video (without filming one)", author: { "@type": "Organization", name: "ReactionUGC" }, publisher: { "@type": "Organization", name: "ReactionUGC" }, datePublished: "2026-11-07" };
 
 export default function Page() {
   return (
@@ -26,7 +26,7 @@ export default function Page() {
             <h2 id="s1">1. Decide what the video has to do</h2>
             <p>One video, one job. Show a surprising result? Name a problem? Announce a price? The job decides the emotion. A reveal wants <strong>surprised</strong>, a price wants <strong>shocked</strong>, a problem wants <strong>confused</strong>, an outcome wants <strong>happy</strong>.</p>
             <h2 id="s2">2. Choose the reaction</h2>
-            <p>Pick a reaction clip whose face already tells the story. Match the person to your audience as well: age, style and setting matter more than you&apos;d expect. In the <Link href="/#pricing">UGCLibrary library</Link> every clip is sorted by emotion, so this takes a minute.</p>
+            <p>Pick a reaction clip whose face already tells the story. Match the person to your audience as well: age, style and setting matter more than you&apos;d expect. In the <Link href="/#pricing">ReactionUGC library</Link> every clip is sorted by emotion, so this takes a minute.</p>
             <ClipStrip variant="row" limit={6} style={{ padding: "6px 0 10px" }} />
             <h2 id="s3">3. Trim the hook to 2–5 seconds</h2>
             <p>Start on the frame where the reaction is already happening, not before it. Cut as soon as the expression peaks. If in doubt, shorter wins.</p>
@@ -46,7 +46,7 @@ export default function Page() {
             </ol>
             <p>CapCut templates work too: drop the reaction clip into the first slot of any &quot;hook + demo&quot; template.</p>
             <h2 id="maker">Reaction video maker or ready-made clips?</h2>
-            <p>A reaction video maker (an editor or an AI avatar tool) gives you the tools, but someone still has to deliver a believable reaction. Filming yourself is free but you only have one face. Hiring creators is believable but slow and costly per variation. <strong>Ready-made reaction clips</strong> sit in between: believable faces, many emotions, ready now. That&apos;s what UGCLibrary is.</p>
+            <p>A reaction video maker (an editor or an AI avatar tool) gives you the tools, but someone still has to deliver a believable reaction. Filming yourself is free but you only have one face. Hiring creators is believable but slow and costly per variation. <strong>Ready-made reaction clips</strong> sit in between: believable faces, many emotions, ready now. That&apos;s what ReactionUGC is.</p>
           </div>
         </div>
       </div></section>

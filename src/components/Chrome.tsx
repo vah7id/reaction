@@ -4,7 +4,7 @@ import { library } from "@/lib/library";
 import CheckoutButton from "./CheckoutButton";
 import AccountLink from "./AccountLink";
 
-export const Logo = () => (<Link href="/" className="logo"><b>ugc</b><i>library</i><span className="dot" /></Link>);
+export const Logo = () => (<Link href="/" className="logo"><b>reaction</b><i>UGC</i><span className="dot" /></Link>);
 
 export function Nav() {
   return (
@@ -42,7 +42,7 @@ export function Footer() {
         <Link href="/#how">How it works</Link><Link href="/characters">Characters</Link><Link href="/#pricing">Pricing</Link><Link href="/#faq">FAQ</Link>
         <a href={`mailto:${config.supportEmail}`}>Support</a>
       </div>
-      <p className="mono muted">© 2026 UGCLibrary · AI UGC reaction clips</p>
+      <p className="mono muted">© 2026 ReactionUGC · AI UGC reaction clips</p>
       <div className="foot-res"><span className="mono">Guides & tools</span>{GUIDES.map(([h, t]) => <Link key={h} href={h}>{t}</Link>)}</div>
     </div></footer>
   );
@@ -98,7 +98,7 @@ export const qa = (q: string, text: string): QA => ({ q, a: text, text });
 export function LpHero({ crumb, title, lede, cta = true }: { crumb: string; title: React.ReactNode; lede: string; cta?: boolean }) {
   return (
     <header className="lp-hero"><div className="wrap">
-      <div className="crumbs"><Link href="/">UGCLibrary</Link> / {crumb}</div>
+      <div className="crumbs"><Link href="/">ReactionUGC</Link> / {crumb}</div>
       <h1>{title}</h1>
       <p className="lede">{lede}</p>
       {cta && (<><CheckoutButton className="btn btn-ink">Get all {library.totalClips} clips <span className="arrow">→</span></CheckoutButton><PriceLine /></>)}

@@ -28,7 +28,7 @@ Sales list: **`/admin?key=YOUR_ADMIN_KEY`**.
 ### 1. Supabase
 1. Create a project at supabase.com (pick an EU region).
 2. **Project Settings → API**: copy the Project URL → `NEXT_PUBLIC_SUPABASE_URL`, the anon public key →
-   `NEXT_PUBLIC_SUPABASE_ANON_KEY`, the service_role key → `SUPABASE_SERVICE_ROLE_KEY`.
+   `NEXT_PUBLIC_SUPABASE_ANON_KEY`, the service_role key → `SUPABASE_SERVICE_ROLE_KEY` (optional).
 3. **Connect → Transaction pooler**: copy the connection string (with your DB password) → `DATABASE_URL`.
    Tables are created automatically (or run `supabase/schema.sql` in the SQL Editor).
 4. **Authentication → URL Configuration**: Site URL `https://ugclibrary.com`, and add
@@ -38,8 +38,15 @@ Sales list: **`/admin?key=YOUR_ADMIN_KEY`**.
    authorized redirect URI = the callback URL Supabase shows on that screen).
 6. **Email**: Supabase's built-in mailer is only for testing (a few emails per hour). Before launch set
    **Authentication → Emails → SMTP** with your email provider (e.g. Resend), sender `login@ugclibrary.com`.
-7. **The pack**: Storage → New bucket `library` (private) → upload `ugclibrary.zip`.
-   The free plan caps a single file at 50 MB; for a bigger zip use the Pro plan, or set `PACK_DOWNLOAD_URL` instead.
+
+### 1b. The pack (Cloudflare R2)
+The zip lives in the private R2 bucket `ugclibrary` as `ugclibrary.zip`. Set `R2_ACCOUNT_ID`,
+`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` (and `R2_OBJECT_KEY` if the file name changes).
+Buyers get a link that expires after 1 hour. To replace the pack, upload a new zip with the same name:
+```bash
+aws s3 cp ugclibrary.zip s3://ugclibrary/ugclibrary.zip \
+  --endpoint-url https://R2_ACCOUNT_ID.r2.cloudflarestorage.com --profile r2
+```
 
 ### 2. Stripe
 1. **Developers → API keys** → `STRIPE_SECRET_KEY` (test key first).

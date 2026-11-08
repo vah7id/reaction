@@ -27,7 +27,7 @@ export default function ClipModalProvider({ children }: { children: React.ReactN
             <div className="sheet">
               <div className="player">
                 <video src={clip.video} poster={clip.poster} autoPlay loop muted playsInline controls controlsList="nodownload" disablePictureInPicture />
-                <div className="wm">Preview · UGCLibrary</div>
+                <div className="wm">Preview · ReactionUGC</div>
               </div>
               <div className="info">
                 <button className="x" onClick={close} aria-label="Close">×</button>

@@ -12,12 +12,17 @@ export async function GET(req: Request) {
   const code = url.searchParams.get("code");
   const tokenHash = url.searchParams.get("token_hash");
   const type = url.searchParams.get("type") as EmailOtpType | null;
+  // Supabase/Google can send the error back instead of a code (e.g. redirect URL not allowed, user cancelled).
+  const sent = url.searchParams.get("error_description") || url.searchParams.get("error");
   const supabase = await supabaseServer();
   const { error } = code
     ? await supabase.auth.exchangeCodeForSession(code)
     : tokenHash && type
       ? await supabase.auth.verifyOtp({ token_hash: tokenHash, type })
-      : { error: new Error("missing code") };
-  if (error) return NextResponse.redirect(`${url.origin}/login?error=1&next=${encodeURIComponent(next)}`, 303);
+      : { error: new Error(sent || "missing code") };
+  if (error) {
+    console.error("[auth/callback] login failed:", error.message, { hasCode: !!code });
+    return NextResponse.redirect(`${url.origin}/login?error=${encodeURIComponent(error.message.slice(0, 200))}&next=${encodeURIComponent(next)}`, 303);
+  }
   return NextResponse.redirect(`${url.origin}${next}`, 303);
 }

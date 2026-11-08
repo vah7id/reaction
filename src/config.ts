@@ -1,7 +1,7 @@
-// UGCLibrary settings — edit these, then redeploy.
+// ReactionUGC settings — edit these, then redeploy.
 export const config = {
-  brand: "UGCLibrary",
-  supportEmail: "support@ugclibrary.com",
+  brand: "ReactionUGC",
+  supportEmail: "support@reactionugc.com",
 
   // Price ladder: the price rises as spots sell out.
   priceSteps: [29, 49, 79, 99],
@@ -20,4 +20,4 @@ export const config = {
 
 export const price = config.priceSteps[config.currentStep];
 export const nextPrice = config.priceSteps[config.currentStep + 1];
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://ugclibrary.com").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.reactionugc.com").replace(/\/$/, "");

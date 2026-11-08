@@ -131,7 +131,7 @@ export default function Home() {
 
       <Faq label="06 — Questions" groups={[
         ["About UGC reaction clips", [
-          qa("What is a UGC reaction clip?", "A few seconds of vertical video where someone reacts to the camera: a jaw drop, a laugh, a double-take, shot to look like user-generated content. Advertisers put it at the very start of a TikTok, Reels, Shorts or Meta ad to stop the scroll, then cut to the product. UGCLibrary is a library of these clips, all performed by AI characters."),
+          qa("What is a UGC reaction clip?", "A few seconds of vertical video where someone reacts to the camera: a jaw drop, a laugh, a double-take, shot to look like user-generated content. Advertisers put it at the very start of a TikTok, Reels, Shorts or Meta ad to stop the scroll, then cut to the product. ReactionUGC is a library of these clips, all performed by AI characters."),
           qa("Are the people in the clips real?", "None of them. Every character and every AI UGC reaction clip is generated. You're licensing finished footage to edit into your own ads, not real customers and not testimonials. The product footage that follows the hook is yours."),
           qa("How do I turn a clip into a UGC reaction video ad?", "Choose a reaction whose feeling matches your caption. Trim 3 to 5 seconds of it to open the video, lay a short line of text on top, then cut to your screen recording or product demo. CapCut, Premiere Pro, Final Cut Pro: any editor does the job."),
           qa("Why do reaction hooks work?", "A face reacting to something raises a question the viewer wants answered: what did they just see? Your demo is the answer. That small open loop is what keeps people watching past the first seconds, where most ads lose them."),
@@ -143,7 +143,7 @@ export default function Home() {
           qa("Is a clip exclusive to me?", "No. You get a commercial-use license, not ownership, so other customers can use the same clips. Pair one with your own caption and demo and the finished ad is still yours alone."),
         ]],
         ["Pricing", [
-          qa("How much does UGCLibrary cost?", `One payment, never a subscription. The price climbs in steps as the library fills up: ${config.priceSteps.map((p) => "$" + p).join(", ")} USD. You get every clip in the current library, full-resolution originals and commercial use. Future collections aren't included.`),
+          qa("How much does ReactionUGC cost?", `One payment, never a subscription. The price climbs in steps as the library fills up: ${config.priceSteps.map((p) => "$" + p).join(", ")} USD. You get every clip in the current library, full-resolution originals and commercial use. Future collections aren't included.`),
           qa("How do I get the clips?", "Log in with Google or your email, pay once with Stripe, and the full pack is ready to download in your account. Log in any time to download it again. Stripe emails you a receipt."),
           qa("Can I get a refund?", `Yes. Email ${config.supportEmail} within ${config.refundDays} days of buying, before you download the pack, and you get your money back. Your statutory rights still apply.`),
         ]],

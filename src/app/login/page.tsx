@@ -24,7 +24,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
         ? `Your account keeps the ${library.totalClips} clips ready to download again any time. Next step is the $${price} Stripe checkout.`
         : "Log in to download the library you bought."}</p>
       {authEnabled()
-        ? <LoginForm next={next} error={!!sp.error} />
+        ? <LoginForm next={next} error={sp.error} />
         : <div className="panel"><p className="demo-note" style={{ marginTop: 0 }}><b>Accounts are not set up yet.</b> Add <code>NEXT_PUBLIC_SUPABASE_URL</code> and <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> to turn on email and Google login.</p></div>}
     </main>
   );

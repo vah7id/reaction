@@ -67,7 +67,7 @@ export default function Page() {
         qa("How can brands measure hook rate on UGC ads?", "Hook rate is usually calculated as 3-second video views divided by impressions. In Meta Ads Manager, add 3-second video plays as a custom column and divide by impressions; on TikTok use 2-second or 6-second views the same way. Compare hook rate between ads that share the same demo, so the opening is the only thing that differs."),
         qa("How can e-commerce brands test hooks in video ads?", "Keep everything after the first three seconds identical and swap only the hook: three to five reaction clips with different lines on top. Run them in the same ad set with the same budget, then judge on hook rate first and cost per purchase second. Retire losers weekly and replace them with new reactions."),
         qa("Do these hooks work for Instagram Reels and Facebook ads?", "Yes. The formulas are platform-neutral. For Reels keep text away from the bottom fifth of the screen, where captions and buttons sit. For Facebook Feed, keep the face centred so a 4:5 crop still works."),
-        qa("Can I use these hook formulas for free?", "Yes. Copy any formula or template on this page. The reaction clips shown next to them are previews from the UGCLibrary library."),
+        qa("Can I use these hook formulas for free?", "Yes. Copy any formula or template on this page. The reaction clips shown next to them are previews from the ReactionUGC library."),
       ]} />
       <FinalCta kicker="Ready-made TikTok ad hooks" title={<>The words are free.<br />The <em>faces</em> are here.</>} sub="Pre-made UGC reaction hooks for every formula on this page." />
     </main>

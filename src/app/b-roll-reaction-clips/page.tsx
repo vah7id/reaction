@@ -23,9 +23,9 @@ export default function Page() {
         <ClipStrip limit={8} skip={3} />
       </div></section>
       <section className="lp-sec"><div className="wrap">
-        <SecHead label="Stock reaction videos vs. UGCLibrary" title={<>Made for <em>social,</em> not slideshows.</>} />
+        <SecHead label="Stock reaction videos vs. ReactionUGC" title={<>Made for <em>social,</em> not slideshows.</>} />
         <div className="table-wrap rv"><table className="compare"><tbody>
-          <tr><th></th><th>Typical stock reaction footage</th><th>Meme clips</th><th>UGCLibrary</th></tr>
+          <tr><th></th><th>Typical stock reaction footage</th><th>Meme clips</th><th>ReactionUGC</th></tr>
           <tr><td>Orientation</td><td>Horizontal 16:9</td><td>Mixed, often low-res</td><td className="us">Vertical 9:16 originals</td></tr>
           <tr><td>Look</td><td>Studio-lit, staged</td><td>Recognisable, overused</td><td className="us">Phone-style, natural</td></tr>
           <tr><td>License</td><td>Per clip</td><td>Usually none</td><td className="us">Commercial use, whole library</td></tr>

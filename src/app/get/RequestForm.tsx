@@ -26,7 +26,7 @@ export default function RequestForm() {
             <div className="sheet checkout" role="dialog" aria-modal="true" style={{ textAlign: "center" }}>
               <div className="env">✉</div>
               <h3>{state.already ? <>You&apos;re already <em>on the list.</em></> : <>We&apos;ll send you <em>an email.</em></>}</h3>
-              <p className="muted">We&apos;ll email the full UGCLibrary to <b style={{ color: "var(--ink)" }}>{state.email}</b>, usually within 24 hours. Keep an eye on your spam folder too.</p>
+              <p className="muted">We&apos;ll email the full ReactionUGC library to <b style={{ color: "var(--ink)" }}>{state.email}</b>, usually within 24 hours. Keep an eye on your spam folder too.</p>
               <div style={{ display: "grid", gap: 10, marginTop: 22 }}>
                 <Link href="/" className="btn btn-ink" onClick={() => setOpen(false)}>Back to the site</Link>
                 <button className="btn btn-line" onClick={() => setOpen(false)}>Close</button>

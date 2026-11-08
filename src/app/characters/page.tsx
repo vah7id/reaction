@@ -5,7 +5,7 @@ import { CHARACTERS, library } from "@/lib/library";
 
 export const metadata: Metadata = {
   title: `AI UGC Creators: ${library.totalCharacters} AI Characters for UGC Reaction Videos`,
-  description: `Meet the AI UGC creators behind UGCLibrary's reaction clips: ${library.totalCharacters} AI characters across ages, looks and countries, ready for TikTok, Reels and Meta ad hooks.`,
+  description: `Meet the AI UGC creators behind ReactionUGC's reaction clips: ${library.totalCharacters} AI characters across ages, looks and countries, ready for TikTok, Reels and Meta ad hooks.`,
   alternates: { canonical: "/characters" },
 };
 
@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main>
       <LpHero crumb="AI characters" title={<>{library.totalCharacters} AI UGC creators. <em>Pick a face.</em></>}
-        lede="A preview of the UGCLibrary cast, with each character's age, country and number of reaction clips. The full pack includes every character." />
+        lede="A preview of the ReactionUGC cast, with each character's age, country and number of reaction clips. The full pack includes every character." />
       <section style={{ padding: "10px 0 90px" }}><div className="wrap">
         <div className="clip-grid" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(150px,1fr))" }}>
           {CHARACTERS.map((c) => <PersonCard key={c.id} c={c} />)}

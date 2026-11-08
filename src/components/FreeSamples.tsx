@@ -10,7 +10,7 @@ export default function FreeSamples() {
       {list.map((c) => (
         <div className="sample" key={c.id}>
           <ClipCard clip={c} onOpen={false} />
-          <a className="btn btn-ink btn-sm btn-block" href={c.video} download={`ugclibrary-free-${c.emotion}-${c.character.name.toLowerCase()}.mp4`}>Download free · {c.emotion}</a>
+          <a className="btn btn-ink btn-sm btn-block" href={c.video} download={`reactionugc-free-${c.emotion}-${c.character.name.toLowerCase()}.mp4`}>Download free · {c.emotion}</a>
         </div>
       ))}
     </div>

@@ -19,7 +19,7 @@ export async function createCheckoutUrl(origin: string, user: { id: string; emai
             price_data: {
               currency: "usd",
               unit_amount: price * 100,
-              product_data: { name: "UGCLibrary — full library", description: `${library.totalClips} AI UGC reaction clips, commercial-use license` },
+              product_data: { name: "ReactionUGC — full library", description: `${library.totalClips} AI UGC reaction clips, commercial-use license` },
             },
           },
     ],

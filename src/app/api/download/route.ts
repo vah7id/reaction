@@ -4,10 +4,11 @@ import { currentUser } from "@/lib/supabase/server";
 import { authEnabled, SUPABASE_URL } from "@/lib/supabase/env";
 import { ownsLibrary } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
+import { r2Enabled, r2SignedUrl } from "@/lib/r2";
 
 export const dynamic = "force-dynamic";
 
-/** Only buyers get the pack. With a Supabase Storage file it hands out a link that expires in 1 hour. */
+/** Only buyers get the pack: a private Cloudflare R2 (or Supabase Storage) link that expires in 1 hour. */
 export async function GET(req: Request) {
   const origin = new URL(req.url).origin;
   if (authEnabled()) {
@@ -20,6 +21,7 @@ export async function GET(req: Request) {
     const s = id ? await stripe().checkout.sessions.retrieve(id).catch(() => null) : null;
     if (s?.payment_status !== "paid") return NextResponse.redirect(`${origin}/download`, 303);
   }
+  if (r2Enabled()) return NextResponse.redirect(await r2SignedUrl(3600), 303);
   const file = process.env.SUPABASE_PACK_PATH; // e.g. "library/ugclibrary.zip" (bucket/path)
   const service = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SECRET_KEY;
   if (file && service && SUPABASE_URL) {
