@@ -1,0 +1,180 @@
+{
+ "totalClips": 345,
+ "totalCharacters": 57,
+ "shelves": [
+  [
+   "candid",
+   108
+  ],
+  [
+   "surprised",
+   57
+  ],
+  [
+   "shocked",
+   40
+  ],
+  [
+   "happy",
+   34
+  ],
+  [
+   "amazed",
+   28
+  ],
+  [
+   "confused",
+   23
+  ],
+  [
+   "laughing",
+   17
+  ],
+  [
+   "excited",
+   16
+  ],
+  [
+   "emotional",
+   8
+  ],
+  [
+   "curious",
+   6
+  ],
+  [
+   "playful",
+   4
+  ],
+  [
+   "frustrated",
+   3
+  ],
+  [
+   "confident",
+   1
+  ]
+ ],
+ "preview": [
+  {
+   "id": "yui_laughing_1",
+   "no": 334,
+   "emotion": "laughing",
+   "video": "/media/clips/yui_laughing_1.mp4",
+   "poster": "/media/clips/yui_laughing_1.webp",
+   "character": {
+    "id": "yui",
+    "name": "Yui",
+    "age": 23,
+    "country": "Japan",
+    "clips": 5,
+    "portrait": "/media/avatars/yui.webp"
+   }
+  },
+  {
+   "id": "valentina_laughing_1",
+   "no": 329,
+   "emotion": "laughing",
+   "video": "/media/clips/valentina_laughing_1.mp4",
+   "poster": "/media/clips/valentina_laughing_1.webp",
+   "character": {
+    "id": "valentina",
+    "name": "Valentina",
+    "age": 24,
+    "country": "Argentina",
+    "clips": 5,
+    "portrait": "/media/avatars/valentina.webp"
+   }
+  },
+  {
+   "id": "freja_laughing_1",
+   "no": 109,
+   "emotion": "laughing",
+   "video": "/media/clips/freja_laughing_1.mp4",
+   "poster": "/media/clips/freja_laughing_1.webp",
+   "character": {
+    "id": "freja",
+    "name": "Freja",
+    "age": 23,
+    "country": "Denmark",
+    "clips": 4,
+    "portrait": "/media/avatars/freja.webp"
+   }
+  },
+  {
+   "id": "nadia_shocked_1",
+   "no": 268,
+   "emotion": "shocked",
+   "video": "/media/clips/nadia_shocked_1.mp4",
+   "poster": "/media/clips/nadia_shocked_1.webp",
+   "character": {
+    "id": "nadia",
+    "name": "Nadia",
+    "age": 26,
+    "country": "Lebanon",
+    "clips": 4,
+    "portrait": "/media/avatars/nadia.webp"
+   }
+  },
+  {
+   "id": "mia_surprised_1",
+   "no": 256,
+   "emotion": "surprised",
+   "video": "/media/clips/mia_surprised_1.mp4",
+   "poster": "/media/clips/mia_surprised_1.webp",
+   "character": {
+    "id": "mia",
+    "name": "Mia",
+    "age": 22,
+    "country": "United States",
+    "clips": 5,
+    "portrait": "/media/avatars/mia.webp"
+   }
+  },
+  {
+   "id": "imani_shocked_1",
+   "no": 129,
+   "emotion": "shocked",
+   "video": "/media/clips/imani_shocked_1.mp4",
+   "poster": "/media/clips/imani_shocked_1.webp",
+   "character": {
+    "id": "imani",
+    "name": "Imani",
+    "age": 25,
+    "country": "United Kingdom",
+    "clips": 5,
+    "portrait": "/media/avatars/imani.webp"
+   }
+  },
+  {
+   "id": "priya_shocked_1",
+   "no": 302,
+   "emotion": "shocked",
+   "video": "/media/clips/priya_shocked_1.mp4",
+   "poster": "/media/clips/priya_shocked_1.webp",
+   "character": {
+    "id": "priya",
+    "name": "Priya",
+    "age": 24,
+    "country": "India",
+    "clips": 4,
+    "portrait": "/media/avatars/priya.webp"
+   }
+  },
+  {
+   "id": "elif_happy_1",
+   "no": 87,
+   "emotion": "happy",
+   "video": "/media/clips/elif_happy_1.mp4",
+   "poster": "/media/clips/elif_happy_1.webp",
+   "character": {
+    "id": "elif",
+    "name": "Elif",
+    "age": 25,
+    "country": "Turkey",
+    "clips": 5,
+    "portrait": "/media/avatars/elif.webp"
+   }
+  }
+ ]
+}
