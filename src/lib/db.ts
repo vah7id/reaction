@@ -111,13 +111,13 @@ export async function ownsLibrary(userId: string, email: string): Promise<boolea
       await purchasesReady;
       const r = await p.query(`select 1 from purchases where status = 'paid' and (user_id = $1 or email = $2) limit 1`, [userId, email.toLowerCase()]);
       if (r.rowCount! > 0) return true;
-      return false;
     } catch (e) {
       // Database down or misconfigured: Stripe is the source of truth for payments, so ask it instead.
       console.error("[db] purchase lookup failed, checking Stripe instead:", e instanceof Error ? e.message : e);
-      const { paidInStripe } = await import("./stripe");
-      return paidInStripe(userId, email);
     }
+    // Not in the database (e.g. paid while the database or webhook was down): check Stripe and save it if found.
+    const { paidInStripe } = await import("./stripe");
+    return paidInStripe(userId, email);
   }
   return (await readP()).some((r) => r.status === "paid" && (r.user_id === userId || r.email === email.toLowerCase()));
 }

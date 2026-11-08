@@ -53,10 +53,14 @@ export async function savePaidSession(s: Stripe.Checkout.Session): Promise<strin
 export async function paidInStripe(_userId: string, email: string): Promise<boolean> {
   if (!stripeEnabled()) return false;
   const sessions = await stripe().checkout.sessions.list({ customer_details: { email: email.toLowerCase() }, status: "complete", limit: 20, expand: ["data.payment_intent.latest_charge"] });
-  return sessions.data.some((s) => {
+  const found = sessions.data.find((s) => {
     if (s.payment_status !== "paid") return false;
     const pi = s.payment_intent;
     const charge = pi && typeof pi !== "string" ? pi.latest_charge : null;
     return !(charge && typeof charge !== "string" && charge.refunded);
   });
+  if (!found) return false;
+  // Save it so the next lookup (and /admin) finds it in the database. Ignore failures: Stripe already confirmed it.
+  await savePaidSession(found).catch((e) => console.error("[stripe] could not backfill purchase:", e instanceof Error ? e.message : e));
+  return true;
 }
