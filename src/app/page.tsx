@@ -18,7 +18,7 @@ export default function Home() {
         <div className="hero-top" style={{ marginTop: 22 }}>
           <h1>Every reaction,<br /><em>catalogued.</em></h1>
           <div className="hero-side">
-            <p>A UGC video library of AI UGC reaction clips, built for the first three seconds of your ad. Open your TikTok, Reels, Shorts or Meta ad with a reaction, cut to your product demo, post.</p>
+            <p>A UGC video library of AI UGC reaction clips, built for the first three seconds of your ad. Lead your TikTok, Reels, Shorts and Meta ads with a real-looking reaction, then let your product take over.</p>
             <CheckoutButton className="btn btn-ink">Get all {T} clips <span className="arrow">→</span></CheckoutButton>
             <PriceLine />
           </div>
@@ -43,16 +43,16 @@ export default function Home() {
           <div className="step rv">
             <span className="k">Step 01</span>
             <div className="step-visual">{CHARACTERS.slice(0, 4).map((c) => <div className="mini" key={c.id}><img src={c.portrait} alt="" /></div>)}</div>
-            <h3>Get the whole library.</h3>
-            <p>One payment, then download every clip as an original vertical MP4. No subscription, re-download any time.</p>
+            <h3>Unlock every clip at once.</h3>
+            <p>Pay a single time and the full pack is yours: every character, every emotion, as untouched vertical MP4s you can grab again whenever you need them.</p>
           </div>
           <div className="step rv">
             <span className="k">Step 02</span>
             <div className="step-visual" style={{ flexWrap: "wrap", alignContent: "center", gap: 7 }}>
               <span className="chip on">Surprised</span><span className="chip">Shocked</span><span className="chip">Happy</span><span className="chip">Confused</span><span className="chip">Amazed</span>
             </div>
-            <h3>Pick a reaction by emotion.</h3>
-            <p>Clips are sorted into folders by feeling and character, so the right hook takes seconds to find.</p>
+            <h3>Find the feeling you need.</h3>
+            <p>Each folder is a character and each file name says the emotion, so matching a face to your caption takes seconds, not a scroll through stock sites.</p>
           </div>
           <div className="step rv">
             <span className="k">Step 03</span>
@@ -60,8 +60,8 @@ export default function Home() {
               <div className="mini"><img src={shocked.poster} alt="" /></div><span className="plus">+</span>
               <div className="demo-box">Your<br />demo</div><span className="plus">=</span><span className="chip on">Ready</span>
             </div>
-            <h3>Add your demo, post.</h3>
-            <p>Place 3–5 seconds of reaction before your screen recording in CapCut, Premiere or any editor. Add a caption.</p>
+            <h3>Stack it on your demo.</h3>
+            <p>Drop a few seconds of the reaction in front of your product footage, put your hook line on screen, export at 9:16 and ship it.</p>
           </div>
         </div>
       </div></section>
@@ -77,30 +77,32 @@ export default function Home() {
         <SecHead label="04 — Made for" title={<>UGC reaction videos for apps that need a <em>hook.</em></>}
           sub="Founders and growth teams use AI UGC reaction clips to test new ad openers without booking a single creator." />
         <div className="niches rv">
-          {["Fitness apps", "Fintech", "Dating", "AI tools", "Mobile games", "Health & wellness", "Productivity", "Social apps", "Ecommerce", "Education"].map((n) => <span className="chip" key={n}>{n}</span>)}
+          {["Language learning", "Budgeting apps", "Skincare & beauty", "Meal kits", "Habit trackers", "Travel", "Creator tools", "Home & interior", "Pet products", "SaaS for teams", "Games", "Online courses"].map((n) => <span className="chip" key={n}>{n}</span>)}
         </div>
       </div></section>
 
       <section style={{ paddingTop: 40 }}><div className="wrap">
         <div className="case rv">
           <div>
-            <span className="mono" style={{ color: "#b8b3a7" }}>Case study — DwellShot</span>
-            <blockquote style={{ marginTop: 18 }}>“Our before-and-after transformations are the story. A reaction clip gives us the opening hook, then the demo shows ordinary listing photos becoming staged interiors.”</blockquote>
-            <p className="by">Amy · DwellShot, AI real estate photography & video</p>
+            <span className="mono" style={{ color: "#b8b3a7" }}>Anatomy of a reaction ad</span>
+            <blockquote style={{ marginTop: 18 }}>“The face asks the question. Your product answers it.”</blockquote>
+            <p className="by">A stranger reacting to something off-screen makes people wait to see what it was. That pause is all your demo needs.</p>
           </div>
           <div className="case-flow">
-            <div><span>0–3s</span><span>Reaction clip opens the ad</span></div>
-            <div><span>3–15s</span><span>Before-and-after listing demo</span></div>
+            <div><span>0–3s</span><span>Reaction clip + hook line on screen</span></div>
+            <div><span>3–15s</span><span>Your product doing the thing</span></div>
+            <div><span>Last 2s</span><span>Offer or app-store button</span></div>
             <div><span>Format</span><span>9:16 for Reels, TikTok, Shorts</span></div>
           </div>
         </div>
-        <div className="quotes">
+        <p className="mono muted" style={{ marginTop: 56 }}>Example hooks · ideas to try, not customer quotes</p>
+        <div className="quotes" style={{ marginTop: 16 }}>
           {[
-            ["We had no video content and no budget for a shoot. Grabbed three reaction clips, cut them onto our demo, and had ads running the same afternoon.", "Sam", "Co-founder, Preyreach"],
-            ["I test five hooks a week now instead of one a month. Same demo every time — only the first three seconds change.", "Emma", "Marketing Manager, Lindo"],
-            ["The clips actually look like people, not stock footage. That was the whole problem with everything else we tried.", "Olivia", "Marketing Manager, Formbnb"],
-            ["One payment, whole library, and I've used it across four campaigns. Cheapest line in our marketing stack by a mile.", "Sep", "Co-founder, Ticketsale"],
-          ].map(([q, n, r]) => <div className="quote rv" key={n}><p>“{q}”</p><div className="by"><b>{n}</b> · {r}</div></div>)}
+            ["“I didn't think a 12-minute workout could do this.”", "Fitness app", "Shocked reaction"],
+            ["“Wait… my bank has been charging me for THAT?”", "Fintech", "Confused reaction"],
+            ["“It built the whole pitch deck while I made coffee.”", "AI tool", "Amazed reaction"],
+            ["“My roommate called it a waste of money. Then she borrowed it.”", "Ecommerce", "Laughing reaction"],
+          ].map(([q, n, r]) => <div className="quote rv" key={n}><p>{q}</p><div className="by"><b>{n}</b> · {r}</div></div>)}
         </div>
       </div></section>
 
@@ -124,28 +126,28 @@ export default function Home() {
               <li>No subscription, re-download any time</li>
             </ul>
             <CheckoutButton className="btn btn-accent btn-block">Get the library <span className="arrow">→</span></CheckoutButton>
-            <p className="fine">Secure checkout with Stripe · {config.refundDays}-day refund before your first download</p>
+            <p className="fine">Secure checkout with Stripe · refundable for {config.refundDays} days if you haven&apos;t downloaded yet</p>
           </div>
         </div>
       </div></section>
 
       <Faq label="06 — Questions" groups={[
-        ["About UGC reaction clips", [
-          qa("What is a UGC reaction clip?", "A few seconds of vertical video where someone reacts to the camera: a jaw drop, a laugh, a double-take, shot to look like user-generated content. Advertisers put it at the very start of a TikTok, Reels, Shorts or Meta ad to stop the scroll, then cut to the product. ReactionUGC is a library of these clips, all performed by AI characters."),
-          qa("Are the people in the clips real?", "None of them. Every character and every AI UGC reaction clip is generated. You're licensing finished footage to edit into your own ads, not real customers and not testimonials. The product footage that follows the hook is yours."),
-          qa("How do I turn a clip into a UGC reaction video ad?", "Choose a reaction whose feeling matches your caption. Trim 3 to 5 seconds of it to open the video, lay a short line of text on top, then cut to your screen recording or product demo. CapCut, Premiere Pro, Final Cut Pro: any editor does the job."),
-          qa("Why do reaction hooks work?", "A face reacting to something raises a question the viewer wants answered: what did they just see? Your demo is the answer. That small open loop is what keeps people watching past the first seconds, where most ads lose them."),
+        ["Making the ad", [
+          qa("Where does the reaction go in my video?", "Right at the start. The reaction is the hook: it plays while your caption sets up the question, then you cut to the product. Most people scroll within the first couple of seconds, so that is where the clip earns its place."),
+          qa("How long should the reaction last?", "Usually two to four seconds. Long enough for the expression to land and the caption to be read, short enough that viewers reach your demo before they lose interest."),
+          qa("How do I choose the right emotion?", "Match it to the line on screen. A surprising stat suits a shocked face, a relatable problem suits confusion, a happy result suits laughter or excitement. If you're unsure, cut two versions with different reactions and let the ad results decide."),
+          qa("Which editing apps work?", "Anything that handles MP4: CapCut, Premiere Pro, Final Cut, DaVinci Resolve, even the editors built into TikTok and Instagram."),
         ]],
-        ["The UGC video library", [
-          qa("What's inside the library?", `${T} AI UGC reaction clips from ${N} AI characters, sorted by emotion: surprised, shocked, happy, amazed, confused, excited, laughing and more, plus a folder of candid everyday moments.`),
-          qa("What format are the files?", "Original vertical 9:16 MP4s with no captions, no music and no edits, ready for your own text, sound and product footage."),
-          qa("Can I run the clips in paid ads?", "Yes. The commercial-use license covers paid social ads, organic posts, websites and work you do for clients. What you can't do is resell or redistribute the raw clips as a library of your own."),
-          qa("Is a clip exclusive to me?", "No. You get a commercial-use license, not ownership, so other customers can use the same clips. Pair one with your own caption and demo and the finished ad is still yours alone."),
+        ["Files and license", [
+          qa("What exactly do I download?", `One zip with ${T} clips from ${N} AI characters, a folder per character, with the emotion in each file name. Every clip is a clean vertical 9:16 MP4 with no text, music or watermark.`),
+          qa("Are these real people?", "No. Every character is AI-generated, so there are no model releases to chase. Don't present them as real customers or as reviews of your product; use them as the opening hook, and let your own footage show the product."),
+          qa("Can I use them in paid ads and client work?", "Yes: paid social, organic posts, landing pages and projects for clients are all covered. The one thing you can't do is resell or share the raw clips themselves."),
+          qa("Will other brands use the same clips?", "They can, because the license isn't exclusive. In practice your caption, cut and product footage make the finished ad your own."),
         ]],
-        ["Pricing", [
-          qa("How much does ReactionUGC cost?", `One payment, never a subscription. The price climbs in steps as the library fills up: ${config.priceSteps.map((p) => "$" + p).join(", ")} USD. You get every clip in the current library, full-resolution originals and commercial use. Future collections aren't included.`),
-          qa("How do I get the clips?", "Log in with Google, pay once with Stripe, and the full pack is ready to download in your account. Log in any time to download it again. Stripe emails you a receipt."),
-          qa("Can I get a refund?", `Yes. Email ${config.supportEmail} within ${config.refundDays} days of buying, before you download the pack, and you get your money back. Your statutory rights still apply.`),
+        ["Buying", [
+          qa("Why does the price go up?", `Early buyers get the lowest price. After a set number of sales at each level it moves to the next one: ${config.priceSteps.map((p) => "$" + p).join(" → ")} USD. You pay once and keep the clips you bought.`),
+          qa("How do I get my download?", "Sign in with Google, pay through Stripe, and your account page has the download button. Sign in again whenever you need the files; Stripe emails your receipt."),
+          qa("What if it isn't for me?", `Write to ${config.supportEmail} within ${config.refundDays} days of buying, as long as you haven't downloaded the pack yet, and we'll refund you. This doesn't affect your statutory rights.`),
         ]],
       ]} />
 
