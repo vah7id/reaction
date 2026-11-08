@@ -35,7 +35,7 @@ export default async function Account({ searchParams }: { searchParams: Promise<
       ) : (
         <>
           <h1>No library <em>yet.</em></h1>
-          <p className="muted">This account hasn&apos;t bought the library. If you paid with a different email, log in with that one or email {mail}.</p>
+          <p className="muted">This account hasn&apos;t bought the library. If you paid with a different email, log in with the Google account for that email, or email {mail}.</p>
           <div className="panel"><a className="btn btn-ink btn-block" href="/api/checkout">Get all {library.totalClips} clips · ${price} <span className="arrow">→</span></a></div>
         </>
       )}

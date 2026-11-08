@@ -5,7 +5,7 @@ import { supabaseServer } from "@/lib/supabase/server";
 export const dynamic = "force-dynamic";
 const safe = (n: string | null) => (n && n.startsWith("/") && !n.startsWith("//") ? n : "/account");
 
-// Google sign-in and email magic links both come back here.
+// Google sign-in comes back here (email magic links would too, if turned on later).
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const next = safe(url.searchParams.get("next"));

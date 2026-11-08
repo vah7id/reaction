@@ -144,7 +144,7 @@ export default function Home() {
         ]],
         ["Pricing", [
           qa("How much does ReactionUGC cost?", `One payment, never a subscription. The price climbs in steps as the library fills up: ${config.priceSteps.map((p) => "$" + p).join(", ")} USD. You get every clip in the current library, full-resolution originals and commercial use. Future collections aren't included.`),
-          qa("How do I get the clips?", "Log in with Google or your email, pay once with Stripe, and the full pack is ready to download in your account. Log in any time to download it again. Stripe emails you a receipt."),
+          qa("How do I get the clips?", "Log in with Google, pay once with Stripe, and the full pack is ready to download in your account. Log in any time to download it again. Stripe emails you a receipt."),
           qa("Can I get a refund?", `Yes. Email ${config.supportEmail} within ${config.refundDays} days of buying, before you download the pack, and you get your money back. Your statutory rights still apply.`),
         ]],
       ]} />
