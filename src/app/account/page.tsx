@@ -37,11 +37,18 @@ export default async function Account({ searchParams }: { searchParams: Promise<
         <>
           <h1>{sp.welcome ? <>The library <em>is yours.</em></> : <>Your <em>library.</em></>}</h1>
           <p className="muted">All {library.totalClips} AI UGC reaction clips from {library.totalCharacters} characters, as original vertical MP4s, sorted into folders by character with the emotion in each file name.</p>
-          <div className="panel">
-            <a className="btn btn-accent btn-block" href="/api/download">Download the full pack <span className="arrow">↓</span></a>
-            {sp.missing && <p className="fine" style={{ color: "var(--accent)" }}>The download isn&apos;t available right now. Email {mail} and we&apos;ll send it.</p>}
-            <p className="fine">Log in here any time to download again.</p>
-          </div>
+          {config.manualDelivery ? (
+            <div className="panel">
+              <p><b>Your pack will be sent to your email.</b></p>
+              <p className="muted">We&apos;ll email the download to <b>{user.email}</b> within {config.deliveryTime}. Check your spam folder too. Nothing after {config.deliveryTime}? Email {mail}.</p>
+            </div>
+          ) : (
+            <div className="panel">
+              <a className="btn btn-accent btn-block" href="/api/download">Download the full pack <span className="arrow">↓</span></a>
+              {sp.missing && <p className="fine" style={{ color: "var(--accent)" }}>The download isn&apos;t available right now. Email {mail} and we&apos;ll send it.</p>}
+              <p className="fine">Log in here any time to download again.</p>
+            </div>
+          )}
           <p className="muted" style={{ fontSize: 14, marginTop: 22 }}>Commercial-use license: paid ads, organic posts, websites and client work. No resale or redistribution of the raw clips. Questions or refunds within {config.refundDays} days: {mail}</p>
         </>
       ) : (

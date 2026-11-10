@@ -44,6 +44,12 @@ export default async function Download({ searchParams }: { searchParams: Promise
       <span className="mono muted">Payment received{email ? ` · ${email}` : ""}</span>
       <h1>The library <em>is yours.</em></h1>
       <p className="muted">All {library.totalClips} AI UGC reaction clips from {library.totalCharacters} characters, as original vertical MP4s, sorted into folders by character with the emotion in each file name.</p>
+      {config.manualDelivery && !demo ? (
+        <div className="panel">
+          <p><b>Your pack will be sent to your email.</b></p>
+          <p className="muted">We&apos;ll email the download to {email ? <b>{email}</b> : "the email you used at checkout"} within {config.deliveryTime}. Check your spam folder too. Nothing after {config.deliveryTime}? Email <a href={`mailto:${config.supportEmail}`} style={{ textDecoration: "underline" }}>{config.supportEmail}</a>.</p>
+        </div>
+      ) : (
       <div className="panel">
         {link
           ? <a className="btn btn-accent btn-block" href={link}>Download the full pack <span className="arrow">↓</span></a>
@@ -51,6 +57,7 @@ export default async function Download({ searchParams }: { searchParams: Promise
         <p className="fine">Keep this page open until your download finishes.</p>
         {demo && <p className="demo-note"><b>Demo mode.</b> Add <code>STRIPE_SECRET_KEY</code> to take real payments; this page then only opens after a paid checkout.</p>}
       </div>
+      )}
       <p className="muted" style={{ fontSize: 14, marginTop: 22 }}>Commercial-use license: paid ads, organic posts, websites and client work. No resale or redistribution of the raw clips. Questions or refunds within {config.refundDays} days: <a href={`mailto:${config.supportEmail}`} style={{ textDecoration: "underline" }}>{config.supportEmail}</a></p>
     </main>
   );

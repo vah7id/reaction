@@ -5,12 +5,15 @@ import { authEnabled, SUPABASE_URL } from "@/lib/supabase/env";
 import { ownsLibrary } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { r2Enabled, r2SignedUrl } from "@/lib/r2";
+import { config } from "@/config";
 
 export const dynamic = "force-dynamic";
 
 /** Only buyers get the pack: a private Cloudflare R2 (or Supabase Storage) link that expires in 1 hour. */
 export async function GET(req: Request) {
   const origin = new URL(req.url).origin;
+  // Manual delivery: the pack is emailed by hand, so never hand out a link here.
+  if (config.manualDelivery) return NextResponse.redirect(`${origin}/account`, 303);
   if (authEnabled()) {
     const user = await currentUser();
     if (!user) return NextResponse.redirect(`${origin}/login?next=/account`, 303);

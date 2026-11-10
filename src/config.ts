@@ -14,6 +14,11 @@ export const config = {
   // "stripe": buy buttons open Stripe Checkout (needs STRIPE_SECRET_KEY).
   purchaseMode: "stripe" as "email" | "stripe",
 
+  // true: after paying, buyers see "we'll email your pack" instead of a download button,
+  // and /api/download is switched off. You send the zip to them yourself.
+  manualDelivery: true,
+  deliveryTime: "24 hours", // shown to buyers: "within 24 hours"
+
   // Preview clips that can be downloaded free on the B-roll page (ids from src/data/library.json).
   freeSamples: ["valentina_laughing_1", "nadia_shocked_1", "elif_happy_1"],
 };
